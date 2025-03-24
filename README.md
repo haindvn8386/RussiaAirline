@@ -1,6 +1,7 @@
 
 ![image](https://github.com/user-attachments/assets/fadb8089-9143-4290-a3c9-de38cdb1baab)
 
+Link download data: https://postgrespro.com/docs/postgrespro/12/demodb-bookings-installation.html
 
 **Danh sách các bảng trong database Airline, bao gồm:**
 
