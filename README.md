@@ -19,46 +19,46 @@ tickets<br>
 **1. Tổng quan về các bảng**
 Dựa trên tên bảng, chúng thể suy ra ý nghĩa và vai trò của chúng:
 
-**aircrafts_data**: Lưu thông tin về máy bay (mã máy bay, loại, phạm vi bay, v.v.).
-**airports_data**: Lưu thông tin về sân bay (mã sân bay, tên, thành phố, v.v.).
-**boarding_passes**: Lưu thông tin thẻ lên máy bay (số vé, số ghế, thời gian lên máy bay, v.v.).
-**bookings**: Lưu thông tin đặt chỗ (mã đặt chỗ, ngày đặt, tổng tiền, v.v.).
-**flights**: Lưu thông tin chuyến bay (mã chuyến bay, sân bay đi/đến, thời gian, máy bay, v.v.).
-**seats**: Lưu thông tin ghế trên máy bay (mã máy bay, số ghế, loại ghế, v.v.).
-**ticket_flights**: Bảng trung gian, liên kết vé và chuyến bay (mã vé, mã chuyến bay, giá vé, v.v.).
-**tickets**: Lưu thông tin vé (mã vé, mã đặt chỗ, thông tin hành khách, v.v.).
+**aircrafts_data**: Lưu thông tin về máy bay (mã máy bay, loại, phạm vi bay, v.v.).<br>
+**airports_data**: Lưu thông tin về sân bay (mã sân bay, tên, thành phố, v.v.).<br>
+**boarding_passes**: Lưu thông tin thẻ lên máy bay (số vé, số ghế, thời gian lên máy bay, v.v.).<br>
+**bookings**: Lưu thông tin đặt chỗ (mã đặt chỗ, ngày đặt, tổng tiền, v.v.).<br>
+**flights**: Lưu thông tin chuyến bay (mã chuyến bay, sân bay đi/đến, thời gian, máy bay, v.v.).<br>
+**seats**: Lưu thông tin ghế trên máy bay (mã máy bay, số ghế, loại ghế, v.v.).<br>
+**ticket_flights**: Bảng trung gian, liên kết vé và chuyến bay (mã vé, mã chuyến bay, giá vé, v.v.).<br>
+**tickets**: Lưu thông tin vé (mã vé, mã đặt chỗ, thông tin hành khách, v.v.).<br>
 
 **2. Mối quan hệ giữa các bảng**
 Dựa trên ý nghĩa, tôi sẽ suy ra các mối quan hệ (relationships) giữa các bảng, thường được thiết lập qua khóa chính (primary key) và khóa ngoại (foreign key).
-
+<br>
 **a. bookings và tickets**
 Mối quan hệ: Một đặt chỗ (bookings) có thể có nhiều vé (tickets) - Quan hệ 1:N (một-nhiều).
 Khóa liên kết:
 bookings có khóa chính là book_ref (mã đặt chỗ).
 tickets có khóa ngoại là book_ref, tham chiếu đến bookings(book_ref).
 Ý nghĩa: Một khách hàng đặt chỗ (booking) có thể mua nhiều vé cho nhiều hành khách.
-
+<br>
 **b. tickets và ticket_flights**
 Mối quan hệ: Một vé (tickets) có thể liên quan đến nhiều chuyến bay (flights) qua bảng trung gian ticket_flights - Quan hệ N:N (nhiều-nhiều).
 Khóa liên kết:
 tickets có khóa chính là ticket_no (mã vé).
 ticket_flights có khóa ngoại ticket_no tham chiếu tickets(ticket_no) và flight_id tham chiếu flights(flight_id).
 Ý nghĩa: Một vé có thể bao gồm nhiều chuyến bay (ví dụ: chuyến bay nối chuyến), và một chuyến bay có thể có nhiều vé.
-
+<br>
 **c. flights và ticket_flights**
 Mối quan hệ: Một chuyến bay (flights) có thể có nhiều vé, được liên kết qua ticket_flights - Quan hệ 1:N (một-nhiều) từ flights đến ticket_flights.
 Khóa liên kết:
 flights có khóa chính là flight_id (mã chuyến bay).
 ticket_flights có khóa ngoại flight_id tham chiếu flights(flight_id).
 Ý nghĩa: Bảng ticket_flights lưu thông tin chi tiết (như giá vé) cho từng vé trên từng chuyến bay.
-
+<br>
 **d. flights và aircrafts_data**
 Mối quan hệ: Một chuyến bay (flights) được thực hiện bởi một máy bay (aircrafts_data) - Quan hệ N:1 (nhiều-một).
 Khóa liên kết:
 aircrafts_data có khóa chính là aircraft_code (mã máy bay).
 flights có khóa ngoại aircraft_code tham chiếu aircrafts_data(aircraft_code).
 Ý nghĩa: Mỗi chuyến bay được gán cho một máy bay cụ thể.
-
+<br>
 **e. flights và airports_data**
 Mối quan hệ: Một chuyến bay (flights) có sân bay đi và sân bay đến, liên kết với airports_data - Quan hệ N:1 (nhiều-một) cho cả sân bay đi và đến.
 Khóa liên kết:
@@ -67,21 +67,21 @@ flights có hai khóa ngoại:
 departure_airport tham chiếu airports_data(airport_code).
 arrival_airport tham chiếu airports_data(airport_code).
 Ý nghĩa: Mỗi chuyến bay có sân bay khởi hành và sân bay đích.
-
+<br>
 **f. seats và aircrafts_data**
 Mối quan hệ: Một máy bay (aircrafts_data) có nhiều ghế (seats) - Quan hệ 1:N (một-nhiều).
 Khóa liên kết:
 aircrafts_data có khóa chính là aircraft_code.
 seats có khóa ngoại aircraft_code tham chiếu aircrafts_data(aircraft_code).
 Ý nghĩa: Mỗi máy bay có danh sách ghế (ví dụ: 1A, 1B, v.v.).
-
+<br>
 **g. boarding_passes và ticket_flights**
 Mối quan hệ: Một vé-chuyến bay (ticket_flights) có một thẻ lên máy bay (boarding_passes) - Quan hệ 1:1 (một-một).
 Khóa liên kết:
 ticket_flights có khóa chính là cặp (ticket_no, flight_id).
 boarding_passes có khóa ngoại (ticket_no, flight_id) tham chiếu ticket_flights(ticket_no, flight_id).
 Ý nghĩa: Mỗi vé trên một chuyến bay được cấp một thẻ lên máy bay (boarding pass) khi check-in.
-
+<br>
 **h. boarding_passes và seats**
 Mối quan hệ: Một thẻ lên máy bay (boarding_passes) được gán cho một ghế (seats) - Quan hệ N:1 (nhiều-một).
 Khóa liên kết:
