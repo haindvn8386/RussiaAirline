@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/ead1e108-120f-4f7f-abf8-286c306fd5d2)
+
+![image](https://github.com/user-attachments/assets/fadb8089-9143-4290-a3c9-de38cdb1baab)
 
 
 **Danh sách các bảng trong database Airline, bao gồm:**
@@ -14,17 +15,19 @@ tickets<br>
 Đây là một schema điển hình cho hệ thống đặt vé máy bay. Tôi sẽ phân tích và chỉ ra mối quan hệ giữa các bảng dựa trên tên và ý nghĩa của chúng, vì đây là các bảng phổ biến trong hệ thống hàng không.
 Nếu bạn có schema chi tiết (các cột và khóa), tôi có thể phân tích sâu hơn.
 
+![image](https://github.com/user-attachments/assets/ead1e108-120f-4f7f-abf8-286c306fd5d2)
+
 **1. Tổng quan về các bảng**
 Dựa trên tên bảng, chúng thể suy ra ý nghĩa và vai trò của chúng:
 
-aircrafts_data: Lưu thông tin về máy bay (mã máy bay, loại, phạm vi bay, v.v.).
-airports_data: Lưu thông tin về sân bay (mã sân bay, tên, thành phố, v.v.).
-boarding_passes: Lưu thông tin thẻ lên máy bay (số vé, số ghế, thời gian lên máy bay, v.v.).
-bookings: Lưu thông tin đặt chỗ (mã đặt chỗ, ngày đặt, tổng tiền, v.v.).
-flights: Lưu thông tin chuyến bay (mã chuyến bay, sân bay đi/đến, thời gian, máy bay, v.v.).
-seats: Lưu thông tin ghế trên máy bay (mã máy bay, số ghế, loại ghế, v.v.).
-ticket_flights: Bảng trung gian, liên kết vé và chuyến bay (mã vé, mã chuyến bay, giá vé, v.v.).
-tickets: Lưu thông tin vé (mã vé, mã đặt chỗ, thông tin hành khách, v.v.).
+**aircrafts_data**: Lưu thông tin về máy bay (mã máy bay, loại, phạm vi bay, v.v.).
+**airports_data**: Lưu thông tin về sân bay (mã sân bay, tên, thành phố, v.v.).
+**boarding_passes**: Lưu thông tin thẻ lên máy bay (số vé, số ghế, thời gian lên máy bay, v.v.).
+**bookings**: Lưu thông tin đặt chỗ (mã đặt chỗ, ngày đặt, tổng tiền, v.v.).
+**flights**: Lưu thông tin chuyến bay (mã chuyến bay, sân bay đi/đến, thời gian, máy bay, v.v.).
+**seats**: Lưu thông tin ghế trên máy bay (mã máy bay, số ghế, loại ghế, v.v.).
+**ticket_flights**: Bảng trung gian, liên kết vé và chuyến bay (mã vé, mã chuyến bay, giá vé, v.v.).
+**tickets**: Lưu thông tin vé (mã vé, mã đặt chỗ, thông tin hành khách, v.v.).
 
 **2. Mối quan hệ giữa các bảng**
 Dựa trên ý nghĩa, tôi sẽ suy ra các mối quan hệ (relationships) giữa các bảng, thường được thiết lập qua khóa chính (primary key) và khóa ngoại (foreign key).
