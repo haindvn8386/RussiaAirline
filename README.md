@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/0fe60458-9cd5-4d52-b725-4b427e441509)
+![image](https://github.com/user-attachments/assets/ead1e108-120f-4f7f-abf8-286c306fd5d2)
+
 
 **Danh sách các bảng trong database Airline, bao gồm:**
 
