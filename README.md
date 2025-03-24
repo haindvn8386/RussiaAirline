@@ -13,7 +13,6 @@ seats <br>
 ticket_flights <br>
 tickets<br>
 Đây là một schema điển hình cho hệ thống đặt vé máy bay. Tôi sẽ phân tích và chỉ ra mối quan hệ giữa các bảng dựa trên tên và ý nghĩa của chúng, vì đây là các bảng phổ biến trong hệ thống hàng không.
-Nếu bạn có schema chi tiết (các cột và khóa), tôi có thể phân tích sâu hơn.
 
 ![image](https://github.com/user-attachments/assets/ead1e108-120f-4f7f-abf8-286c306fd5d2)
 
