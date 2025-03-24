@@ -3,13 +3,13 @@
 **Danh sách các bảng trong database Airline, bao gồm:**
 
 aircrafts_data <br>
-airports_data
-boarding_passes
-bookings
-flights
-seats
-ticket_flights
-tickets
+airports_data <br>
+boarding_passes <br>
+bookings <br>
+flights <br>
+seats <br>
+ticket_flights <br>
+tickets<br>
 Đây là một schema điển hình cho hệ thống đặt vé máy bay. Tôi sẽ phân tích và chỉ ra mối quan hệ giữa các bảng dựa trên tên và ý nghĩa của chúng, vì đây là các bảng phổ biến trong hệ thống hàng không.
 Nếu bạn có schema chi tiết (các cột và khóa), tôi có thể phân tích sâu hơn.
 
