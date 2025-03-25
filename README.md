@@ -1,7 +1,7 @@
 
 ![image](https://github.com/user-attachments/assets/fadb8089-9143-4290-a3c9-de38cdb1baab)
 
-Chức năng chính của project
+Chức năng chính của project<br>
 Use Case 1: Cache thông tin chuyến bay (flights) để giảm tải truy vấn PostgreSQL.<br>
 Use Case 2: Quản lý hàng đợi đặt vé (bookings) bằng Redis List.<br>
 Use Case 3: Lưu phiên người dùng (sessions) với TTL để tự động hết hạn.<br>
