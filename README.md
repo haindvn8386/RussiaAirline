@@ -1,6 +1,27 @@
 
 ![image](https://github.com/user-attachments/assets/fadb8089-9143-4290-a3c9-de38cdb1baab)
 
+Chức năng chính của project
+Use Case 1: Cache thông tin chuyến bay (flights) để giảm tải truy vấn PostgreSQL.<br>
+Use Case 2: Quản lý hàng đợi đặt vé (bookings) bằng Redis List.<br>
+Use Case 3: Lưu phiên người dùng (sessions) với TTL để tự động hết hạn.<br>
+Dữ liệu chính vẫn được lưu trong PostgreSQL, Redis chỉ dùng để tối ưu hiệu suất.<br>
+
+Cấu hình:<br>
+Project: Maven.<br>
+Language: Java.<br>
+Spring Boot Version: 3.2.4 (hoặc mới nhất).<br>
+Group: rediscache.rusiaairline.<br>
+Artifact: airline.<br>
+Name: airline.<br>
+Package Name: rediscache.rusiaairline.<br>
+Packaging: Jar.<br>
+Java Version: 17 (hoặc phiên bản bạn dùng).<br>
+Dependencies:<br>
+Spring Data Redis<br>
+Spring Data JPA<br>
+Spring Web<br>
+PostgreSQL Driver<br>
 
 **Danh sách các bảng trong database Airline, bao gồm:**
 
